@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yan's Blog</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Blog of Yan</h1>
+    </div>
+    <script>
+        async function printJSON(){
+            let json = await (await fetch("./data/main.json")).json();
+            console.log(json)
+        }
+
+        printJSON()
+            .then(val => {
+                console.log("ok");
+            }).catch(err => {
+                console.log("opps!", err);
+            })
+    </script>
+</body>
+</html>
